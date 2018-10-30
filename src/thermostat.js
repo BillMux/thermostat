@@ -4,14 +4,9 @@ var Thermostat = function(){
 };
 
 Thermostat.prototype.displayTemp = function () {
-  if(this.temp < 10) {
-    this.temp = 10;
-  } else if(this.temp > 25 && this.powerSave === true) {
-    this.temp = 25;
-  }
-  else if(this.temp > 32 && this.powerSave === false) {
-    this.temp = 32;
-  }
+  if(this.temp < 10) this.temp = 10
+  else if(this.temp > 25 && this.powerSave === true) this.temp = 25
+  else if(this.temp > 32 && this.powerSave === false) this.temp = 32
   return this.temp
 };
 
@@ -30,3 +25,7 @@ Thermostat.prototype.displayPowerSave = function () {
 Thermostat.prototype.turnOffPowerSave = function () {
   this.powerSave = false
 };
+
+Thermostat.prototype.reset = function () {
+  this.temp = 20
+}

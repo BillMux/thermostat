@@ -49,4 +49,11 @@ describe("Thermostat", function(){
       expect(thermostat.displayPowerSave()).toBe(false)
     });
   });
+  describe("reset temperature", function() {
+    it("resets to 20 degrees", function() {
+      thermostat.up(5)
+      thermostat.reset()
+      expect(thermostat.displayTemp()).toBe(20)
+    })
+  })
 });
