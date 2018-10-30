@@ -1,23 +1,23 @@
 'use strict';
 
-describe("Thermostat", function(){
+describe("Thermostat", function() {
   var thermostat;
 
-  beforeEach(function(){
+  beforeEach(function() {
     thermostat = new Thermostat();
   });
 
-  it("Starts at 20 degrees", function(){
+  it("Starts at 20 degrees", function() {
     expect(thermostat.getTemp()).toEqual(20)
   });
 
-  describe("change temp methods", function(){
-    it("increases temperature when we call up", function(){
+  describe("change temp methods", function() {
+    it("increases temperature when we call up", function() {
       thermostat.up(3)
       expect(thermostat.getTemp()).toBe(23)
     });
 
-    it("reduces temperature when we call down", function(){
+    it("reduces temperature when we call down", function() {
       thermostat.down(3)
       expect(thermostat.getTemp()).toBe(17)
     });
