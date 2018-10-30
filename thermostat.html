@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="src/thermostat.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/thermostat-styles.css">
+  <title>THERMOSTAT</title>
+</head>
+<body>
+
+  <h1>THERMOSTAT</h1>
+  <form title="CurrentTemp">
+    Current Temperature:
+    <input type="submit" value ="Up"></input>
+    <input type="submit" value ="Down"></input>
+    <input type="submit" value ="Reset"></input>
+
+
+  </form>
+
+  <form title="PowerSaveStatus">
+    PowerSave Status:
+    <label class="switch">
+      <input type="checkbox" value"On/Off">
+      <span class="slider round"></span>
+    </label>
+  </form>
+
+  <form title="EnergyUse">
+    Energy Use:
+    <h6>Thresholds for energy use:</h6>
+    <p>High: 25 or above</p>
+    <p>Medium: 18-25</p>
+    <p>Low: Lower than 18</p>
+  </form>
+
+</body>
+</html>
