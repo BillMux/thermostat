@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Thermostat", function(){
   var thermostat;
 
@@ -49,11 +51,30 @@ describe("Thermostat", function(){
       expect(thermostat.displayPowerSave()).toBe(false)
     });
   });
+
   describe("reset temperature", function() {
     it("resets to 20 degrees", function() {
       thermostat.up(5)
       thermostat.reset()
       expect(thermostat.displayTemp()).toBe(20)
-    })
-  })
+    });
+  });
+
+  describe("energy usage", function() {
+    it("shows low usage when temp is below 18", function() {
+      thermostat.down(5)
+      expect(thermostat.showEnergyUsage()).toBe("low")
+    });
+
+    it("shows low usage when temp is below 25", function() {
+      thermostat.up(3)
+      expect(thermostat.showEnergyUsage()).toBe("medium")
+    });
+
+    it("shows low usage when temp is at least 25", function() {
+      thermostat.up(7)
+      expect(thermostat.showEnergyUsage()).toBe("high")
+    });
+
+  });
 });

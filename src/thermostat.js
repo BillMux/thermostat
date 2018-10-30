@@ -1,6 +1,7 @@
 var Thermostat = function(){
   this.temp = 20
   this.powerSave = true
+  this.energyUsage = "medium"
 };
 
 Thermostat.prototype.displayTemp = function () {
@@ -28,4 +29,10 @@ Thermostat.prototype.turnOffPowerSave = function () {
 
 Thermostat.prototype.reset = function () {
   this.temp = 20
-}
+};
+
+Thermostat.prototype.showEnergyUsage = function () {
+  if(this.temp < 18) this.energyUsage = "low"
+  if(this.temp > 24) this.energyUsage = "high"
+  return this.energyUsage
+};
