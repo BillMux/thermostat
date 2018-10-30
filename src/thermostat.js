@@ -4,7 +4,7 @@ var Thermostat = function(){
   this.energyUsage = "medium"
 };
 
-Thermostat.prototype.displayTemp = function () {
+Thermostat.prototype.getTemp = function () {
   if(this.temp < 10) this.temp = 10
   else if(this.temp > 25 && this.powerSave === true) this.temp = 25
   else if(this.temp > 32 && this.powerSave === false) this.temp = 32
@@ -19,7 +19,7 @@ Thermostat.prototype.down = function (amount) {
   this.temp -= amount
 };
 
-Thermostat.prototype.displayPowerSave = function () {
+Thermostat.prototype.getPowerSave = function () {
   return this.powerSave
 };
 
@@ -31,7 +31,7 @@ Thermostat.prototype.reset = function () {
   this.temp = 20
 };
 
-Thermostat.prototype.showEnergyUsage = function () {
+Thermostat.prototype.getEnergyUsage = function () {
   if(this.temp < 18) this.energyUsage = "low"
   if(this.temp > 24) this.energyUsage = "high"
   return this.energyUsage
