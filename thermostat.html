@@ -13,10 +13,8 @@
     <input type="submit" value ="Up"></input>
     <input type="submit" value ="Down"></input>
     <input type="submit" value ="Reset"></input>
-
-
   </form>
-
+  <br>
   <form title="PowerSaveStatus">
     PowerSave Status:
     <label class="switch">
@@ -24,13 +22,24 @@
       <span class="slider round"></span>
     </label>
   </form>
-
+  <br>
   <form title="EnergyUse">
     Energy Use:
-    <h6>Thresholds for energy use:</h6>
-    <p>High: 25 or above</p>
-    <p>Medium: 18-25</p>
-    <p>Low: Lower than 18</p>
+    <h5>Thresholds for energy use:</h5>
+    <table class="temp-table">
+      <tr>
+        <td><strong>High</strong></td>
+        <td>25˚C or above<td>
+      </tr>
+      <tr>
+        <td><strong>Medium</strong></td>
+        <td>18-25˚C<td>
+      </tr>
+      <tr>
+        <td><strong>Low</strong></td>
+        <td>Lower than 18˚C
+      </tr>
+    </table>
   </form>
 
 </body>
