@@ -9,27 +9,29 @@
   <title>THERMOSTAT</title>
 </head>
 <body>
-
   <h1>THERMOSTAT</h1>
   <form title="CurrentTemp">
-    Current Temperature:
-    <span id="temperature"></span>
+    <li>Current Temperature:
+    <span id="temperature"></span>˚C</li>
+    <li>
     <input id="temp_up" type="button" value="Up"></input>
     <input id="temp_dn" type="button" value="Down"></input>
     <input id="temp_reset" type="button" value="Reset"></input>
+    </li>
   </form>
   <br>
   <form title="PowerSaveStatus">
     PowerSave Status:
     <label class="switch">
-      <input id ="power_save_switch" type="checkbox" value"On/Off" checked>
+      <input id="power_save_switch" type="checkbox" value"On/Off" checked>
       <span class="slider round"></span>
     </label>
   </form>
   <br>
   <form title="EnergyUse">
     Energy Use:
-    <h5>Thresholds for energy use:</h5>
+    <span id="energy_use"></span>
+    <h4>Thresholds for energy use:</h4>
     <table class="temp-table">
       <tr>
         <td><strong>High</strong></td>
@@ -37,7 +39,7 @@
       </tr>
       <tr>
         <td><strong>Medium</strong></td>
-        <td>18-25˚C<td>
+        <td>18-24˚C<td>
       </tr>
       <tr>
         <td><strong>Low</strong></td>

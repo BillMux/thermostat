@@ -63,17 +63,17 @@ describe("Thermostat", function(){
   describe("energy usage", function() {
     it("shows low usage when temp is below 18", function() {
       thermostat.temp = 17
-      expect(thermostat.getEnergyUsage()).toBe("low")
+      expect(thermostat.getEnergyUsage()).toBe("Low")
     });
 
     it("shows medium usage when temp is below 25", function() {
       thermostat.temp = 24
-      expect(thermostat.getEnergyUsage()).toBe("medium")
+      expect(thermostat.getEnergyUsage()).toBe("Medium")
     });
 
     it("shows high usage when temp is at least 25", function() {
       thermostat.temp = 25
-      expect(thermostat.getEnergyUsage()).toBe("high")
+      expect(thermostat.getEnergyUsage()).toBe("High")
     });
 
   });
