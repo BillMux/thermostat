@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+  </script>
   <script src="src/thermostat.js"></script>
+  <script src="src/temp_control.js"></script>
   <link rel="stylesheet" type="text/css" href="style/thermostat-styles.css">
   <title>THERMOSTAT</title>
 </head>
@@ -10,15 +13,16 @@
   <h1>THERMOSTAT</h1>
   <form title="CurrentTemp">
     Current Temperature:
-    <input type="submit" value ="Up"></input>
-    <input type="submit" value ="Down"></input>
-    <input type="submit" value ="Reset"></input>
+    <span id="temperature"></span>
+    <input id="temp_up" type="button" value="Up"></input>
+    <input id="temp_dn" type="button" value="Down"></input>
+    <input id="temp_reset" type="button" value="Reset"></input>
   </form>
   <br>
   <form title="PowerSaveStatus">
     PowerSave Status:
     <label class="switch">
-      <input type="checkbox" value"On/Off">
+      <input id ="power_save_switch" type="checkbox" value"On/Off" checked>
       <span class="slider round"></span>
     </label>
   </form>
@@ -41,6 +45,5 @@
       </tr>
     </table>
   </form>
-
 </body>
 </html>

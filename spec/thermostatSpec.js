@@ -13,30 +13,30 @@ describe("Thermostat", function(){
 
   describe("change temp methods", function(){
     it("increases temperature when we call up", function(){
-      thermostat.up(3)
-      expect(thermostat.getTemp()).toBe(23)
+      thermostat.up()
+      expect(thermostat.getTemp()).toBe(21)
     });
 
     it("reduces temperature when we call down", function(){
-      thermostat.down(3)
-      expect(thermostat.getTemp()).toBe(17)
+      thermostat.down()
+      expect(thermostat.getTemp()).toBe(19)
     });
   });
 
   describe("guard temperature", function() {
     it("doesn't let temperature below 10 degrees", function() {
-      thermostat.down(11)
+      thermostat.temp = 9
       expect(thermostat.getTemp()).toBe(10)
     });
 
     it("doesn't let temperature above 25 degrees if powersave is on", function() {
-      thermostat.up(11)
+      thermostat.temp = 26
       expect(thermostat.getTemp()).toBe(25)
     });
 
     it("doesn't let temperature above 32 degrees if powersave is off", function() {
-      thermostat.turnOffPowerSave();
-      thermostat.up(15)
+      thermostat.switchPowerSave();
+      thermostat.temp = 33
       expect(thermostat.getTemp()).toBe(32)
     });
   });
@@ -47,14 +47,14 @@ describe("Thermostat", function(){
     });
 
     it("can be turned off", function(){
-      thermostat.turnOffPowerSave();
+      thermostat.switchPowerSave();
       expect(thermostat.getPowerSave()).toBe(false)
     });
   });
 
   describe("reset temperature", function() {
     it("resets to 20 degrees", function() {
-      thermostat.up(5)
+      thermostat.up()
       thermostat.reset()
       expect(thermostat.getTemp()).toBe(20)
     });
@@ -62,17 +62,17 @@ describe("Thermostat", function(){
 
   describe("energy usage", function() {
     it("shows low usage when temp is below 18", function() {
-      thermostat.down(5)
+      thermostat.temp = 17
       expect(thermostat.getEnergyUsage()).toBe("low")
     });
 
-    it("shows low usage when temp is below 25", function() {
-      thermostat.up(3)
+    it("shows medium usage when temp is below 25", function() {
+      thermostat.temp = 24
       expect(thermostat.getEnergyUsage()).toBe("medium")
     });
 
-    it("shows low usage when temp is at least 25", function() {
-      thermostat.up(7)
+    it("shows high usage when temp is at least 25", function() {
+      thermostat.temp = 25
       expect(thermostat.getEnergyUsage()).toBe("high")
     });
 
