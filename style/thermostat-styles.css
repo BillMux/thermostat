@@ -1,5 +1,12 @@
 body {
   text-align: center;
+  background-color: lightblue;
+  font-family: verdana;
+  color: darkblue;
+}
+
+h3 {
+  font-style: italic;
 }
 .switch {
   position: relative;
@@ -65,6 +72,6 @@ li {
 }
 
 .temp-table {
-  text-align: center;
-  width: 30%;
+  width: 50%;
+  margin: 0 auto;
 }

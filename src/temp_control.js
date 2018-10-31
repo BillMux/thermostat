@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  function updateWeather(city) {
+    url = 'http://api.openweathermap.org/data/2.5/weather?q='
+    api = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed'
+    unit = '&units=metric'
+    $.get( url + city + api + unit, function( data ) {
+    $( "#london_weather" ).text( data.main.temp );
+    });
+  };
+  updateWeather('london')
   var thermostat = new Thermostat()
     $("#temperature").text(thermostat.getTemp());
     $("#energy_use").text(thermostat.getEnergyUsage());
