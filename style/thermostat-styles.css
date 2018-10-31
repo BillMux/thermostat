@@ -5,9 +5,14 @@ body {
   color: darkblue;
 }
 
+h1 {
+  font-family: "Arial Rounded MT Bold";
+}
+
 h3 {
   font-style: italic;
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -72,6 +77,6 @@ li {
 }
 
 .temp-table {
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
 }
