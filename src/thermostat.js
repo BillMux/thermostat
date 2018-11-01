@@ -29,7 +29,7 @@ Thermostat.prototype.getPowerSave = function() {
 
 Thermostat.prototype.switchPowerSave = function() {
   this.powerSave = !this.powerSave
-  if(this.powerSave == true && this.temp > 25) this.temp = 25
+  if(this.powerSave === true && this.temp > 25) this.temp = 25
 };
 
 Thermostat.prototype.getEnergyUsage = function() {
