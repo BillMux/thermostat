@@ -3,12 +3,12 @@ $(document).ready(function() {
     url = 'http://api.openweathermap.org/data/2.5/weather?q='
     api = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed'
     unit = '&units=metric'
-    $.get( url + city + api + unit, function( data ) {
-    $( "#london_weather" ).text( data.main.temp );
+    $.get(url + city + api + unit, function(data) {
+    $('#city_weather').text(data.main.temp);
     });
   };
-  updateWeather('london')
-  var thermostat = new Thermostat()
+  updateWeather($('#city option:selected').text())
+  var thermostat = new Thermostat();
     $("#temperature").text(thermostat.getTemp());
     $("#energy_use").text(thermostat.getEnergyUsage());
 
